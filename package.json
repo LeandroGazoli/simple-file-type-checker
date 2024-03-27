@@ -1,0 +1,14 @@
+{
+  "name": "simple-file-type-checker",
+  "version": "1.0.0",
+  "description": "Um utilitário simples para verificar se um tipo de arquivo é permitido com base em uma lista de tipos permitidos.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Leandro Gazoli",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.3"
+  }
+}
