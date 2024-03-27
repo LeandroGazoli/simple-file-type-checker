@@ -8,9 +8,9 @@
 export default function isFileTypeAllowed(fileType: string, allowedTypes: string[] | undefined): boolean {
   if (!allowedTypes) return true;
 
-  const allowedRegex = allowedTypes.map((type) => new RegExp('^' + type.replace('*', '.*') + '$'));
+  const allowedRegex = allowedTypes.map((type) => new RegExp('^' + type.replace(/\*/g, '.*') + '$'));
 
-  const isAllowed = allowedRegex.some((regex) => regex.test(fileType));
+  const isAllowed = allowedRegex.some((regex) => regex.test(fileType) || regex.test(fileType.replace(/\+xml$/, '')));
 
   return isAllowed;
 }
