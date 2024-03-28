@@ -10,8 +10,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 function isFileTypeAllowed(fileType, allowedTypes) {
     if (!allowedTypes)
         return true;
-    const allowedRegex = allowedTypes.map((type) => new RegExp('^' + type.replace('*', '.*') + '$'));
-    const isAllowed = allowedRegex.some((regex) => regex.test(fileType));
+    const allowedRegex = allowedTypes.map((type) => new RegExp('^' + type.replace(/\*/g, '.*') + '$'));
+    const isAllowed = allowedRegex.some((regex) => regex.test(fileType) || regex.test(fileType.replace(/\+xml$/, '')));
     return isAllowed;
 }
 exports.default = isFileTypeAllowed;

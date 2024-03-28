@@ -1,6 +1,6 @@
 {
   "name": "simple-file-type-checker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Um utilitário simples para verificar se um tipo de arquivo é permitido com base em uma lista de tipos permitidos.",
   "main": "./dist/index.js",
   "scripts": {
